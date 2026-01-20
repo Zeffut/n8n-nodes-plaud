@@ -1,0 +1,61 @@
+{
+  "name": "n8n-nodes-plaud",
+  "version": "0.1.0",
+  "description": "n8n community node to interact with Plaud AI API for audio recordings management",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "plaud",
+    "audio",
+    "transcription",
+    "recordings",
+    "voice recorder",
+    "ai"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Zeffut/n8n-nodes-plaud",
+  "author": {
+    "name": "Zeffut"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zeffut/n8n-nodes-plaud.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/PlaudApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Plaud/Plaud.node.js",
+      "dist/nodes/Plaud/PlaudTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.56.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
